@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:jessie
 MAINTAINER igor.katson@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -11,7 +11,7 @@ RUN apt-get install -y python-dev python-psycopg2 git subversion mercurial pytho
 RUN apt-get install -y libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev python-tk
 
 # install the most up to date pip/setuptools python package management tools for python 2.7
-RUM python -c "exec('try: from urllib2 import urlopen \nexcept: from urllib.request import urlopen');f=urlopen('https://bootstrap.pypa.io/get-pip.py').read();exec(f)"
+RUN python -c "exec('try: from urllib2 import urlopen \nexcept: from urllib.request import urlopen');f=urlopen('https://bootstrap.pypa.io/get-pip.py').read();exec(f)"
 
 RUN pip install -U reviewboard==2.5.4
 
