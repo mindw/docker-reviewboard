@@ -13,7 +13,7 @@ RUN apt-get install -y libtiff5-dev libjpeg-dev zlib1g-dev libfreetype6-dev libl
 # install the most up to date pip/setuptools python package management tools for python 2.7
 RUN python -c "exec('try: from urllib2 import urlopen \nexcept: from urllib.request import urlopen');f=urlopen('https://bootstrap.pypa.io/get-pip.py').read();exec(f)"
 
-RUN pip install -U reviewboard==2.5.4
+RUN pip install -U reviewboard==2.5.5
 
 RUN pip install -U uwsgi
 
