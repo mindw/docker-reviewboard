@@ -23,8 +23,8 @@ mkdir -p /var/www/
 
 CONFFILE=/var/www/reviewboard/conf/settings_local.py
 
-while !nc -z ${PGHOST} ${PGPORT}; do sleep 3; done
-while !nc -z ${MEMCACHED_HOST} ${MEMCACHED_PORT}; do sleep 3; done
+while ! nc -z ${PGHOST} ${PGPORT}; do sleep 3; done
+while ! nc -z ${MEMCACHED_HOST} ${MEMCACHED_PORT}; do sleep 3; done
 
 if [[ ! -d /var/www/reviewboard ]]; then
     rb-site install --noinput \
